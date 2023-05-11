@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Challenge</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    <style>
+		body {
+			font-family: 'Roboto Mono', monospace;
+			text-align: center;
+			padding: 20px;
+		}
+		h1 {
+			font-size: 36px;
+		}
+		input[type=submit] {
+			padding: 10px 20px;
+			border-radius: 5px;
+			border: none;
+			background-color: #4CAF50;
+			color: white;
+			cursor: pointer;
+		}
+		input[type=submit]:hover {
+			background-color: #45a049;
+		}
+		p {
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+		.result {
+			font-size: 24px;
+			margin-top: 20px;
+		}
+		.question {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-bottom: 20px;
+		}
+		.question img {
+			max-width: 100%;
+			margin-bottom: 10px;
+		}
+		.choices {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.choice {
+			margin: 10px;
+		}
+		.choice input {
+			margin-right: 5px;
+		}
+        .question img {
+	max-width: 45%;
+	margin-bottom: 10px;
+}
+	</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/i5i5rsuopeyr10cov4ovuev06cb1sxchallenges">Enigma Quest</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('challenges') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('enigma_validator_render') }}">Enigma Validator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('about')}}">About Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://linktr.ee/anuj_dwivedi">Contact Dev.</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <br>
+<br>
+<br>
+<br>
+	<h1>Image Challenge</h1>
+            <h2>For Position 5 - ENIGMA CODE</h2>
+
+     {% if result %}
+		<p class="result">{{ result }} The CODE Required is : {{ number }}</p>
+	{% endif %}
+
+	<form action="/i5i5rsuopeyr10cov4ovuev06cb1sxchallenge5-validator" method="post">
+		<div class="question">
+			<img src="{{ url_for('static', filename='question1.jpeg') }}" alt="Question 1">
+			<div class="choices">
+				<div class="choice">
+					<input type="radio" id="q1a" name="q1" value="a">
+					<label for="q1a">a</label>
+				</div>
+				<div class="choice">
+					<input type="radio" id="q1b" name="q1" value="b">
+					<label for="q1b">b</label>
+				</div>
+				<div class="choice">
+					<input type="radio" id="q1c" name="q1" value="c">
+					<label for="q1c">c</label>
+				</div>
+				<div class="choice">
+					<input type="radio" id="q1d" name="q1" value="d">
+					<label for="q1d">d</label>
+				</div>
+			</div>
+		</div>
+		<div class="question">
+			<img src="{{ url_for('static', filename='question2.jpeg') }}" alt="Question 2">
+			<div class="choices">
+				<div class="choice">
+					<input type="radio" id="q2a" name="q2" value="a">
+					<label for="q2a">a</label>
+				</div>
+				<div class="choice">
+					<input type="radio" id="q2b" name="q2" value="b">
+					<label for="q2b">b</label>
+				</div>
+				<div class="choice">
+					<input type="radio" id="q2c" name="q2" value="c">
+                    <label for="q2c">c</label>
+                </div>
+                <div class="choice">
+                    <input type="radio" id="q2d" name="q2" value="d">
+                    <label for="q2d">d</label>
+                    </div>
+                </div>
+            </div>
+        {% if result %}
+		<p class="result">{{ result }} The CODE Required is : {{ number }}</p>
+	{% endif %}
+            <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
